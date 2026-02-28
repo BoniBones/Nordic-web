@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Nombres Nórdicos</title>
+    <!-- Modern Typography: Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Forjador de Nombres</h1>
+            <p>Genera nombres ancestrales de inspiración nórdica y de la Tierra Media.</p>
+        </header>
+
+        <main class="generator-container">
+            <div class="controls">
+                <div class="select-wrapper">
+                    <select id="name-type" class="type-select">
+                        <optgroup label="Estilo Nórdico Puro">
+                            <option value="nordicMale">Hombre Nórdico</option>
+                            <option value="nordicFemale">Mujer Nórdica</option>
+                            <option value="nordicCity">Ciudad Nórdica</option>
+                            <option value="nordicRealm">Reino Nórdico</option>
+                        </optgroup>
+                        <optgroup label="Estilo Enano (Khuzdul)">
+                            <option value="dwarfMale">Hombre Enano</option>
+                            <option value="dwarfFemale">Mujer Enana</option>
+                            <option value="dwarfCity">Ciudad / Fortaleza Enana</option>
+                        </optgroup>
+                    </select>
+                    <!-- Icono de flecha personalizada -->
+                    <div class="select-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </div>
+                </div>
+
+                <button onclick="generateNames()" class="btn-generate">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                        <path d="M3 3v5h5" />
+                        <path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" />
+                        <path d="M16 21v-5h5" />
+                    </svg>
+                    <span>Generar 9 Nombres</span>
+                </button>
+            </div>
+
+            <div class="results-grid" id="results-container">
+                <!-- Los nombres generados aparecerán aquí -->
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
