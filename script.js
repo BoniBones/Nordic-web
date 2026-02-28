@@ -31,6 +31,10 @@ const nameData = {
     dwarfCity: {
         rootMin: ['khaz', 'bar', 'dur', 'mor', 'az', 'grom', 'kar', 'thram', 'bor', 'grum', 'iron', 'ere', 'thraz'],
         descriptors: ['dum', 'gar', 'bar', 'dur', 'khaz', 'heim', 'fort', 'hold', 'fang', 'drak']
+    },
+    dwarfGemMetal: {
+        prefixes: ['Mith', 'Zir', 'Khel', 'Gal', 'Naug', 'Cele', 'Mal', 'Bar', 'Nar', 'Thil', 'Ere', 'Khaz', 'Gla', 'Ark', 'Dur', 'Uru', 'Sil', 'An', 'Car'],
+        suffixes: ['ril', 'ken', 'ak', 'ed', 'vorn', 'mir', 'baur', 'zil', 'bor', 'gal', 'dur', 'thran', 'ite', 'guz', 'rak', 'mar', 'mith']
     }
 };
 
@@ -80,6 +84,13 @@ function generateSingleName(type) {
 
     } else if (type.startsWith('dwarf')) {
         const data = nameData[type];
+
+        if (type === 'dwarfGemMetal') {
+            const prefix = getRandomElement(data.prefixes);
+            const suffix = getRandomElement(data.suffixes);
+            return capitalizeWords(prefix.toLowerCase() + suffix.toLowerCase());
+        }
+
         const root1 = getRandomElement(data.rootMin);
 
         if (type === 'dwarfCity') {
